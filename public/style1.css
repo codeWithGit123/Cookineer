@@ -1,0 +1,175 @@
+body {
+    background-color: #eaeaea; /* Sets a soothing light gray background color for the entire webpage. */
+    overflow: hidden; /* Hides content that overflows the viewport. */
+
+    /* Now, let's style the main container of your content. */
+}
+
+.container {
+    position: absolute; /* Makes the container's position relative to the nearest positioned ancestor. */
+    left: 50%; /* Horizontally centers the container at 50% of the viewport's width. */
+    top: 50%; /* Vertically centers the container at 50% of the viewport's height. */
+    transform: translate(-50%, -50%); /* Perfectly centers the container in both directions. */
+    width: 1000px; /* Sets a fixed width for your container. */
+    height: 600px; /* Sets a fixed height for your container. */
+    padding: 50px; /* Adds some spacing inside the container. */
+    background-color: #f5f5f5; /* Gives the container a light gray background. */
+    box-shadow: 0 30px 50px #dbdbdb; /* Adds a subtle box shadow for a floating effect. */
+}
+
+/* Now, let's style the individual items within your slideshow. */
+#slide {
+    width: max-content; /* Allows the container to expand horizontally based on its content. */
+    margin-top: 50px; /* Adds spacing between the slideshow and other elements. */
+}
+
+.item {
+    width: 200px; /* Sets a fixed width for each slideshow item. */
+    height: 300px; /* Sets a fixed height for each slideshow item. */
+    background-position: 50% 50%; /* Positions the background image in the center. */
+    display: inline-block; /* Makes items inline to display them side by side. */
+    transition: 0.5s; /* Adds a smooth transition effect for item changes. */
+    background-size: cover; /* Scales the background image to cover the item. */
+    position: absolute; /* Positions the items absolutely within the container. */
+    z-index: 1; /* Controls the stacking order of items. */
+    top: 50%; /* Vertically centers each item. */
+    transform: translate(0, -50%); /* Perfectly centers each item vertically. */
+    border-radius: 20px; /* Rounds the corners of each item for a modern look. */
+    box-shadow: 0 30px 50px #505050; /* Adds a shadow effect to the items. */
+}
+/* Now, let's style the first two items differently for a unique look. */
+.item:nth-child(1),
+.item:nth-child(2) {
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%; /* Makes the first two items occupy the entire container width. */
+    height: 100%; /* Makes the first two items occupy the entire container height. */
+    box-shadow: none; /* Removes the box shadow for these items. */
+}
+
+
+/* And the rest of the items have their own positioning and styling. */
+.item:nth-child(3) {
+    left: 50%;
+}
+.item:nth-child(4){
+    left:calc(50% + 220px);
+}
+.item:nth-child(5){
+    left:calc(50% + 440px);
+}
+.item:nth-child(n+6){
+    left:calc(50% + 660px);
+    opacity: 0;
+}
+
+
+.item .content{
+    position: absolute;
+    top:50%;
+    left:100px;
+    width:300px;
+    text-align: left;
+    padding:0;
+    color:#eee;
+    transform: translate(0,-50%);
+    display: none;
+    font-family: system-ui;
+}
+.item:nth-child(2) .content{
+    display: block;
+    z-index: 11111;
+}
+.item .name{
+    font-size: 40px;
+    font-weight: bold;
+    opacity: 0;
+    animation:showcontent 1s ease-in-out 1 forwards
+}
+.item.des {
+    margin: 20px 0; /* keep the margin as it is */
+    opacity: 1; /* change the opacity to 1 to make the text visible */
+    animation: showcontent 2s ease-in-out 0.5s 1 forwards; /* change the animation duration, delay, and iteration count */
+    color: #ffffff; /* change the text color to white */
+    background-color: #0000ff; /* add a background color of blue */
+}
+
+.item button{
+    padding:10px 20px;
+    border:none;
+    opacity: 0;
+    animation:showcontent 1s ease-in-out 0.6s 1 forwards
+}
+@keyframes showcontent{
+    from{
+        opacity: 0;
+        transform: translate(0,100px);
+        filter:blur(33px);
+    }to{
+        opacity: 1;
+        transform: translate(0,0);
+        filter:blur(0);
+    }
+}
+.buttons{
+    position: absolute;
+    bottom:30px;
+    z-index: 222222;
+    text-align: center;
+    width:100%;
+}
+.buttons button{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    border:1px solid #555;
+    transition: 0.5s;
+}.buttons button:hover{
+    background-color: #bac383;
+}
+
+
+/* button a day make your day */
+button {
+    font-family: "Poppins", sans-serif; /* use a modern and stylish font */
+    font-size: 1.2rem; /* increase the font size */
+    font-weight: bold; /* make the text bold */
+    color: #ffffff; /* change the text color to white */
+    background-color: #ff0000; /* change the background color to red */
+    border: none; /* remove the border */
+    border-radius: 0.5rem; /* add some rounded corners */
+    padding: 0.8rem 1.2rem; /* add some padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* add a subtle shadow */
+    transition: all 0.3s ease-in-out; /* add a smooth transition effect */
+}
+
+button:hover {
+    transform: scale(1.1); /* make the button slightly bigger on hover */
+    background-color: #ff6600; /* change the background color to orange on hover */
+}
+
+/* have a nice discription */
+.des {
+    font-family: "Roboto", sans-serif; /* use a simple and elegant font */
+    font-size: 1rem; /* use a moderate font size */
+    color: #000000; /* use a black text color */
+    background-color: #ffffff; /* use a white background color */
+    border: 2px solid #ff0000; /* add a red border */
+    border-radius: 0.25rem; /* add some rounded corners */
+    padding: 0.5rem; /* add some padding */
+    margin: 1rem; /* add some margin */
+    text-align: justify; /* align the text to both edges */
+    line-height: 1.5; /* increase the line height */
+    animation: fade-in 1s ease-in-out; /* add a fade-in animation */
+}
+
+@keyframes fade-in {
+    from {
+      opacity: 0; /* start with zero opacity */
+    }
+    to {
+      opacity: 1; /* end with full opacity */
+    }
+  }

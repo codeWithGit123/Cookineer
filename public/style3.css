@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('background.jpg') center/cover;
+    filter: blur(8px);
+    transition: filter 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.f-cont {
+    background: rgb(205,55,0);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s ease-in-out;
+}
+
+.f-cont:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    color: #e0b62b;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fg {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 1.2em;
+    color: #4d394b; /* Deep Purple */
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #f0e5d8; /* Ivory */
+    color: #50394c; /* Byzantium */
+    margin-top: 5px;
+}
+
+button {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #ff6b6b; /* Vibrant Red */
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: #ff4d4d; /* Darker Red on hover */
+    transform: scale(1.1);
+}
+
+/* Sparkling effect animation */
+@keyframes sparkling {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.sparkle {
+    position: absolute;
+    content: "✨"; /* You can replace it with your preferred sparkle symbol */
+    color: #fff; /* Sparkle color */
+    font-size: 1.2em;
+    animation: sparkling 1s infinite; /* Adjust animation duration as needed */
+}
+ 
